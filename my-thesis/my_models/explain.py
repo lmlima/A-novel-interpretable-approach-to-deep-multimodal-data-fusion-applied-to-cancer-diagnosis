@@ -49,7 +49,7 @@ def select_fusion_type(model_wrap):
 
 def prepare_data_local(model_wrap, data_loader, device):
     # TODO: Load image and extract features on backbone model.
-
+    model_wrap.eval()
     fusion_type = select_fusion_type(model_wrap)
 
     for batch_idx, (img, target, meta_data, sample_name) in enumerate(data_loader):
